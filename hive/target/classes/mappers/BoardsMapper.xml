@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardsMapper">
+	<select id="boardsList" parameterType="org.hive.bee.dto.StartDTO" resultType="org.hive.bee.dto.BoardsDTO">
+		SELECT * FROM freeboard ORDER BY fno DESC LIMIT #{startRecord}, #{amount}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		SELECT COUNT(*) FROM freeboard
+	</select>
+</mapper>
+<!-- 
+<mapper namespace="org.zerock.mapper.MemberMapper">
+	<select id="getTime" resultType="string">
+		SELECT NOW()
+	</select>
+	<insert id="insertMember">
+		INSERT INTO tbl_member(userid, userpw, username, email)
+		VALUES(#{userid}, #{userpw}, #{username}, #{email})
+	</insert>
+	
+	<select id="selectmember" resultType="org.zerock.domain.MemberVO">
+		SELECT * FROM tbl_member
+		WHERE userid=#{userid}
+	</select>
+	<select id="readWithPW" resultType="org.zerock.domain.MemberVO">
+		SELECT * FROM tbl_member WHERE userid=#{userid} AND userpw=#{userpw}
+	</select>
+</mapper>
+ -->
