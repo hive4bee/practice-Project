@@ -47,7 +47,7 @@
                         <h3 class="panel-title">Logout page</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="post" action="/customLogout">
+                        <form role="form" method="post" action="/customLogout2">
                             <fieldset>
                                 
                                 <!-- Change this to a button or input when using this as a form -->
